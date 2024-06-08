@@ -21,7 +21,7 @@ jobs:
     - name: Machine Info
       run: |
         lscpu
-        lscpu | grep -i AVX2
+        lscpu | grep -i AVX512
     - if: failure()
       run: |
         echo "Runner CPU does not support AVX512"
