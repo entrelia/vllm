@@ -12,7 +12,7 @@ on:
 
 jobs:
   docker-cpu:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
 
     env:
       REGISTRY: us-east1-docker.pkg.dev/entrelia-prod/entrelia
