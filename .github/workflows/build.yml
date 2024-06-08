@@ -1,0 +1,17 @@
+name: build
+
+on:
+  workflow_call: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build Docker Container
+      run: |
+        docker build -f Dockerfile.cpu -t entrelia/vllm-cpu:latest --shm-size=4g .
